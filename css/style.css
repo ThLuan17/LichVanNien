@@ -1,0 +1,571 @@
+:root {
+    --primary-color: rgb(53, 192, 60);
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family:
+    system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+input, button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul, ol, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Nav Bar */
+
+nav {
+    background-color: #ddd;
+    z-index: 1000;
+}
+
+nav .container {
+    position: relative;
+}
+
+nav .container .brand .brand-logo {
+    width: 90px;
+}
+
+nav .container .brand .brand-name {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-left: 2rem;
+    color: var(--primary-color);
+}
+
+nav .container .nav-list {
+    color: #606469;
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+nav .container .nav-list .nav-item .nav-link.active{
+    display: block;
+    color: #000;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+nav .container .nav-toggle {
+    display: none;
+    position: absolute;
+    font-size: 2rem;
+    color: #606469;
+    cursor: pointer;
+}
+
+nav .container .nav-toggle span {
+    background-color: var(--primary-color);
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+}
+
+nav .container .nav-toggle span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+}
+
+nav .container .nav-toggle span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+}
+
+/* Banner */
+/* Owl carousel */
+/* Owl carousel */
+
+.owl-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next {
+    background-color: transparent;
+    font-size: 2rem;
+    color: #606469;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+.owl-carousel .owl-nav .owl-prev img,
+.owl-carousel .owl-nav .owl-next img {
+    align-content: center;
+    width: 24px;
+    padding: .5rem;
+    height: 24px;
+    border: 1px solid #606469;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.owl-carousel .owl-nav .owl-prev {
+    margin-right: 1rem;
+}
+
+.owl-carousel .owl-nav .owl-next {
+    margin-left: 1rem;
+}
+
+/* Content */
+
+.content .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.content .heading-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+    padding-left: 10px;
+}
+
+.content .heading-line {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.content .heading-more {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Main content */
+
+/* Section Calendar */
+
+
+/* Lịch tháng */
+.section-calendar .calendar-inner {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.section-calendar .calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f5f5f5;
+}
+
+.section-calendar .calendar-header .calendar-selec {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.section-calendar .calendar-header .calendar-txt {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    width: 120px;
+}
+
+.section-calendar .calendar-header .calendar-txt i {
+    color: var(--primary-color);
+}
+
+.section-calendar .calendar-header .calendar-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    z-index: 1000;
+    /* display: none; */
+}
+
+.section-calendar .calendar-header .calendar-list.active {
+    display: block;
+}
+
+.section-calendar .calendar-header .calendar-list ul {
+    padding: 1rem;
+}
+
+.section-calendar .calendar-header .calendar-list ul li {
+    padding: .5rem 0;
+}
+
+.section-calendar .calendar-header .calendar-selec-btn {
+    display: inline-block;
+    font-size: 2.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    color: var(--primary-color);
+}
+
+.section-calendar .calendar-header .calendar-selec-btn:hover {
+    background-color: #ddd;
+}
+
+.section-calendar .calendar-header .calendar-selec-btn.primary {
+    background-color: rgba(53, 192, 60, .1);
+    border: 1px solid var(--primary-color);
+    font-size: 2rem;
+    color: var(--primary-color);
+    padding: .5rem 1rem;
+}
+
+/* Lịch Ngày */
+
+.calendar-inner .col-6:first-child {
+    border-right: 1px solid #ddd;
+}
+
+.calendar-inner .calendar-title {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    border-bottom: 1px solid #ddd;
+}
+
+.calendar-inner .calendar-title .fa-sun {
+    color: orange;
+}
+
+.calendar-inner .calendar-title .fa-moon {
+    color: #ddd;
+}
+
+.calendar-inner .calendar-content {
+    text-align: center;
+}
+
+.calendar-inner .calendar-content .calendar-top-date {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.calendar-inner .calendar-content .calendar-middle-date {
+    font-size: 10rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.calendar-inner .calendar-content .calendar-middle-date.primary {
+    color: var(--primary-color);
+}
+
+.calendar-inner .calendar-content .calendar-bottom-date {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff3131;
+    margin-bottom: 1rem;
+}
+
+.calendar-inner .calendar-btn {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-50%);
+    margin-top: 1rem;
+}
+
+.calendar-inner .calendar-btn .calendar-btn-item {
+    font-size: 2rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    margin: .5rem;
+}
+
+
+/* Section Blog */
+
+.section-blog .blog-inner {
+    border: 1px solid #ddd;
+}
+
+.section-blog .blog-inner .blog-item-img {
+    position: relative;
+}
+
+.section-blog .blog-inner .blog-item-img img {
+    height: 100%;
+}
+
+.section-blog .blog-inner .blog-item-content .blog-item-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    margin: 1rem 0;
+
+}
+
+.section-blog .blog-inner .blog-item-content .blog-item-title a {
+    color: #000;
+}
+
+.section-blog .blog-inner .blog-item-content .blog-item-desc {
+    font-size: 1.6rem;
+    color: #606469;
+    margin: 1rem 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Side */
+
+.section-blog .blog-inner .blog-side-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-blog .blog-inner .blog-item-side {
+    display: flex;
+}
+
+.section-blog .blog-inner .blog-item-side:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.section-blog .blog-inner .blog-item-side:not(:first-child) {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.section-blog .blog-inner .blog-item-side .blog-item-content {
+    margin-left: 1rem;
+}
+
+.section-blog .blog-inner .blog-item-card {
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.section-blog .blog-inner .blog-item-card .blog-item-img {
+    position: relative;
+}
+
+.section-blog .blog-inner .blog-item-card .blog-item-img img {
+    height: 100%;
+}
+
+.section-blog .blog-inner .blog-item-card .blog-item-content {
+    padding: 1rem;
+}
+
+.section-blog .blog-inner .blog-item-card .blog-item-content .blog-item-desc {
+    font-size: 1.6rem;
+    color: #606469;
+    margin: 1rem 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Side Content */
+
+.side-content .side-item {
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+} 
+
+.side-content .side-item .side-item-content-card {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.side-content .side-item .side-item-content-card:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.side-content .side-item .side-item-content-card .img {
+    width: 50%;
+    overflow: hidden;
+    border-right: 1px solid #ddd;
+}
+
+.side-content .side-item .side-item-content-card .card-content {
+    font-size: 1.4rem;
+    font-weight: 400;
+    width: 50%;
+    padding-left: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Footer */
+
+footer {
+    background-color: #f5f5f5;
+}
+
+footer h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+footer .footer-txt {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #606469;
+    margin-bottom: 1rem;
+}
+
+footer .footer-txt a:hover {
+    color: var(--primary-color);
+}
+
+footer .footer-list {
+    margin-bottom: 1rem;
+}
+
+footer .footer-list .list-item {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+footer .footer-list .list-item a:hover {
+    color: var(--primary-color);
+}
+
+footer .footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+footer .copy-right {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #606469;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Responsive */
+
+@media (max-width: 767.9px) {
+    /* Nav bar Toggle Visible*/
+    nav .container .nav-toggle {
+        display: block;
+    }
+
+    nav .container .nav-list {
+        font-size: 1.4rem;
+    }
+
+    /* Section Calendar */
+
+    .section-calendar .calendar-header .calendar-selec-btn.primary {
+        position: absolute;
+        top: -50px;
+        left: 0px;
+        transform: translateX(-100%)
+        translateY(-85%);
+        text-wrap: nowrap;
+    }
+}
