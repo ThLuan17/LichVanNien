@@ -550,6 +550,17 @@ footer .copy-right {
 /* Responsive */
 
 @media (max-width: 399.9px) {
+
+    /* Nav bar Toggle Visible*/
+    nav .container .nav-toggle {
+        display: block;
+    }
+
+    nav .container .nav-list {
+        font-size: 1.4rem;
+    }
+
+    /* Section Calendar */
     .section-calendar .calendar-header .calendar-txt {
         width: 100px;
         font-size: 1.4rem;
