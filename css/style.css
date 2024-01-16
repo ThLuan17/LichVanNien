@@ -548,7 +548,24 @@ footer .copy-right {
 
 /* Responsive */
 
-@media (max-width: 767.9px) {
+@media (max-width: 399.9px) {
+    .section-calendar .calendar-header .calendar-txt {
+        width: 100px;
+        font-size: 1.4rem;
+    }
+
+    .section-calendar .calendar-header .calendar-selec-btn.primary {
+        position: absolute;
+        top: -50px;
+        left: 0px;
+        transform: translateX(-100%)
+        translateY(-85%);
+        text-wrap: nowrap;
+    }
+
+}
+
+@media (min-width:400px) and (max-width: 767.9px) {
     /* Nav bar Toggle Visible*/
     nav .container .nav-toggle {
         display: block;
