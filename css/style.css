@@ -1,6 +1,6 @@
 :root {
     --primary-color: rgb(53, 192, 60);
-}
+    --border-color: #ddd;}
 
 *, ::before, ::after {
     box-sizing: inherit;
@@ -71,7 +71,7 @@ nav .container .brand .brand-logo {
     width: 90px;
 }
 
-nav .container .brand .brand-name {
+nav .container .brand-name {
     font-size: 2rem;
     font-weight: 700;
     text-transform: capitalize;
@@ -181,7 +181,7 @@ nav .container .nav-toggle span::after {
 
 /* Content */
 
-.content .heading {
+.heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -189,7 +189,7 @@ nav .container .nav-toggle span::after {
     margin-bottom: 2rem;
 }
 
-.content .heading-title {
+.heading-title {
     font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -197,7 +197,8 @@ nav .container .nav-toggle span::after {
     padding-left: 10px;
 }
 
-.content .heading-line {
+.heading-title::after {
+    content: '';
     position: absolute;
     bottom: 0px;
     left: 0;
@@ -206,7 +207,16 @@ nav .container .nav-toggle span::after {
     background-color: var(--primary-color);
 }
 
-.content .heading-more {
+.heading-line {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.heading-more {
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -216,11 +226,14 @@ nav .container .nav-toggle span::after {
 
 /* Section Calendar */
 
+.section-calendar {
+    position: relative;
+}
 
 /* Lịch tháng */
 .section-calendar .calendar-inner {
     position: relative;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
 }
 
@@ -229,14 +242,15 @@ nav .container .nav-toggle span::after {
     align-items: center;
     justify-content: space-between;
     background-color: #f5f5f5;
-    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px 10px 0px 0px;
 }
 
 .section-calendar .calendar-header .calendar-selec {
     position: relative;
     display: flex;
     align-items: center;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     background-color: #fff;
 }
 
@@ -262,7 +276,7 @@ nav .container .nav-toggle span::after {
     left: 0;
     width: 100%;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     z-index: 1000;
     /* display: none; */
@@ -302,57 +316,68 @@ nav .container .nav-toggle span::after {
 
 /* Lịch Ngày */
 
-.calendar-inner .col-6:first-child {
-    border-right: 1px solid #ddd;
+.section-calendar .calendar-col {
+    width: 50%;
 }
 
-.calendar-inner .calendar-title {
+.section-calendar .calendar-col:first-child {
+    border-radius: 10px 0px 0px 10px;
+    border: 1px solid var(--border-color);
+    border-right: none;
+}
+
+.section-calendar .calendar-col:last-child {
+    border-radius: 0px 10px 10px 0px;
+    border: 1px solid var(--border-color);
+}
+
+.section-calendar .calendar-title {
     font-size: 2rem;
     font-weight: 500;
     text-align: center;
     text-transform: uppercase;
     color: #000;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.calendar-inner .calendar-title .fa-sun {
+.section-calendar .calendar-title .fa-sun {
     color: orange;
 }
 
-.calendar-inner .calendar-title .fa-moon {
+.section-calendar .calendar-title .fa-moon {
     color: #ddd;
 }
 
-.calendar-inner .calendar-content {
+.section-calendar .calendar-content {
     text-align: center;
 }
 
-.calendar-inner .calendar-content .calendar-top-date {
+.section-calendar .calendar-content .calendar-top-date {
     font-size: 1.8rem;
     font-weight: 700;
     color: #000;
     margin-bottom: 1rem;
 }
 
-.calendar-inner .calendar-content .calendar-middle-date {
+.section-calendar .calendar-content .calendar-middle-date {
     font-size: 10rem;
     font-weight: 700;
     color: #333;
     margin-bottom: 1rem;
 }
 
-.calendar-inner .calendar-content .calendar-middle-date.primary {
+.section-calendar .calendar-content .calendar-middle-date.primary {
     color: var(--primary-color);
 }
 
-.calendar-inner .calendar-content .calendar-bottom-date {
+.section-calendar .calendar-content .calendar-bottom-date {
     font-size: 2rem;
     font-weight: 700;
     color: #ff3131;
     margin-bottom: 1rem;
 }
 
-.calendar-inner .calendar-btn {
+.section-calendar .calendar-btn {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -363,10 +388,10 @@ nav .container .nav-toggle span::after {
     margin-top: 1rem;
 }
 
-.calendar-inner .calendar-btn .calendar-btn-item {
+.section-calendar .calendar-btn .calendar-btn-item {
     font-size: 2rem;
     padding: 1rem 1.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 50%;
     margin: .5rem;
 }
@@ -374,19 +399,20 @@ nav .container .nav-toggle span::after {
 
 /* Section Blog */
 
-.section-blog .blog-inner {
-    border: 1px solid #ddd;
+.section-blog .row {
+    border: 1px solid var(--border-color);
 }
 
-.section-blog .blog-inner .blog-item-img {
+.section-blog .blog-item-img {
     position: relative;
 }
 
-.section-blog .blog-inner .blog-item-img img {
+.section-blog .blog-item-img img {
     height: 100%;
+    padding-right: 1rem;
 }
 
-.section-blog .blog-inner .blog-item-content .blog-item-title {
+.section-blog .blog-item-title {
     font-size: 1.8rem;
     font-weight: 700;
     color: #000;
@@ -394,11 +420,11 @@ nav .container .nav-toggle span::after {
 
 }
 
-.section-blog .blog-inner .blog-item-content .blog-item-title a {
+.section-blog .blog-item-title a {
     color: #000;
 }
 
-.section-blog .blog-inner .blog-item-content .blog-item-desc {
+.section-blog .blog-item-desc {
     font-size: 1.6rem;
     color: #606469;
     margin: 1rem 0;
@@ -410,48 +436,40 @@ nav .container .nav-toggle span::after {
 
 /* Side */
 
-.section-blog .blog-inner .blog-side-inner {
+.section-blog .blog-side-inner {
     display: flex;
     flex-direction: column;
 }
 
-.section-blog .blog-inner .blog-item-side {
+.section-blog .blog-item-side {
     display: flex;
 }
 
-.section-blog .blog-inner .blog-item-side:not(:last-child) {
-    border-bottom: 1px solid #ddd;
+.section-blog .blog-item-side:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
 }
 
-.section-blog .blog-inner .blog-item-side:not(:first-child) {
+.section-blog .blog-item-side:not(:first-child) {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 }
 
-.section-blog .blog-inner .blog-item-side .blog-item-content {
-    margin-left: 1rem;
-}
-
-.section-blog .blog-inner .blog-item-card {
-    border: 1px solid #ddd;
+.section-blog .blog-item-card {
+    border: 1px solid var(--border-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
 }
 
-.section-blog .blog-inner .blog-item-card .blog-item-img {
+.section-blog .blog-item-card .blog-item-img {
     position: relative;
 }
 
-.section-blog .blog-inner .blog-item-card .blog-item-img img {
+.section-blog .blog-item-card .blog-item-img img {
     height: 100%;
 }
 
-.section-blog .blog-inner .blog-item-card .blog-item-content {
-    padding: 1rem;
-}
-
-.section-blog .blog-inner .blog-item-card .blog-item-content .blog-item-desc {
+.section-blog .blog-item-card .blog-item-desc {
     font-size: 1.6rem;
     color: #606469;
     margin: 1rem 0;
@@ -463,32 +481,33 @@ nav .container .nav-toggle span::after {
 
 /* Side Content */
 
-.side-content .side-item {
-    border: 1px solid #ddd;
+.side-item-content {
+    border: 1px solid var(--border-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
-} 
+}
 
-.side-content .side-item .side-item-content-card {
+.side-item-content-card {
     display: flex;
     align-items: center;
     padding: 2rem 0;
 }
 
-.side-content .side-item .side-item-content-card:not(:last-child) {
-    border-bottom: 1px solid #ddd;
+.side-item-content-card:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
 }
 
-.side-content .side-item .side-item-content-card .img {
+.side-item-content-card .img {
     width: 50%;
     overflow: hidden;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid var(--border-color);
 }
 
-.side-content .side-item .side-item-content-card .card-content {
+.side-item-content-card .card-desc {
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 500;
+    color: #000;
     width: 50%;
     padding-left: 1rem;
     display: -webkit-box;
