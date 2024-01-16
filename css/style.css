@@ -244,6 +244,7 @@ nav .container .nav-toggle span::after {
     padding: .5rem 1rem;
     border-radius: 4px;
     width: 120px;
+    cursor: pointer;
 }
 
 .section-calendar .calendar-header .calendar-txt i {
