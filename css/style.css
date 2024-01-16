@@ -229,12 +229,15 @@ nav .container .nav-toggle span::after {
     align-items: center;
     justify-content: space-between;
     background-color: #f5f5f5;
+    border-radius: 10px;
 }
 
 .section-calendar .calendar-header .calendar-selec {
     position: relative;
     display: flex;
     align-items: center;
+    border: 1px solid #ddd;
+    background-color: #fff;
 }
 
 .section-calendar .calendar-header .calendar-txt {
@@ -243,8 +246,10 @@ nav .container .nav-toggle span::after {
     background-color: #fff;
     padding: .5rem 1rem;
     border-radius: 4px;
-    width: 120px;
+    width: 100px;
     cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 .section-calendar .calendar-header .calendar-txt i {
@@ -279,7 +284,6 @@ nav .container .nav-toggle span::after {
     display: inline-block;
     font-size: 2.5rem;
     cursor: pointer;
-    border-radius: 4px;
     color: var(--primary-color);
 }
 
@@ -562,7 +566,7 @@ footer .copy-right {
 
     /* Section Calendar */
     .section-calendar .calendar-header .calendar-txt {
-        width: 100px;
+        width: 90px;
         font-size: 1.4rem;
     }
 
